@@ -13,15 +13,16 @@ local Window = Fluent:CreateWindow({
 })
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "home" }),
-    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
-    Teleport = Window:AddTab({ Title = "Teleport", Icon = "palmtree" }),
-    Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
-    Raid = Window:AddTab({ Title = "Dungeon", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
-	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
+    Stack auto farm = Window:AddTab({ Title = "Stack auto farm" }),
+    Setting = Window:AddTab({ Title = "Setting" }),
+    Stats = Window:AddTab({ Title = "Stats" }),
+    Player = Window:AddTab({ Title = "Player" }),
+    Teleport = Window:AddTab({ Title = "Teleport" }),
+    Fruit = Window:AddTab({ Title = "Devil Fruit" }),
+    Raid = Window:AddTab({ Title = "Dungeon" }),
+    Race = Window:AddTab({ Title = "Race V4" }),
+    Shop = Window:AddTab({ Title = "Shop" }),
+	Misc = Window:AddTab({ Title = "Misc" }),
 }
 local Options = Fluent.Options
 
