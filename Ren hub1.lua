@@ -47,7 +47,7 @@ do
                     for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated)) do                                                                                                
                         v.Function()
                     end
-                elseif _G.Team == "Marine" then
+                elseif _G.Team == "Marine" true then
                     for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Marines.Frame.ViewportFrame.TextButton.Activated)) do                                                                                                
                         v.Function()
                     end
@@ -2393,8 +2393,8 @@ local posZ = 0
         Multi = false,
         Default = 1,
     })
-    DropdownSelectWeapon:SetValue('Melee')
-    DropdownSelectWeapon:OnChanged(function(Value)
+    SelectWeapon:SetValue('Melee')
+    SelectWeapon:OnChanged(function(Value)
         ChooseWeapon = Value
     end)
     task.spawn(function()
