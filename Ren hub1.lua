@@ -2424,7 +2424,15 @@ local posZ = 0
                             end
                         end
                     end
-                else
+                 elseif ChooseWeapon == " Gun " then
+                    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if v.ToolTip == "Gun " then
+                            if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                                SelectWeapon = v.Name
+                            end
+                        end
+                    end
+		else
                     for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         if v.ToolTip == "Melee" then
                             if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
@@ -2504,7 +2512,7 @@ local posZ = 0
         game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
     end
 
-    local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Auto Near Mob", Default = false })
+    local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Auto Farm Near Mob", Default = false })
     ToggleMobAura:OnChanged(function(Value)
         _G.AutoNear = Value
     end)
@@ -2541,7 +2549,7 @@ local posZ = 0
 
       Tabs.Main:AddButton({
         Title = "Redeem All Code",
-        Description = "Redeem all code x2 exp",
+        Description = "Redeem all code x2 exp and refund",
         Callback = function()
             UseCode()
         end
@@ -2565,6 +2573,13 @@ local posZ = 0
     UseCode("Axiore")
     UseCode("TantaiGaming")
     UseCode("STRAWHATMAINE")
+    UseCode("NEWTROLL")
+    UseCode("SECRET_ADMIN")
+    UseCode("JULYUPDATE_RESET")
+    UseCode("staffbattle")
+    UseCode("Sub2CaptainMaui")
+    UseCode("SUB2GAMERROBOT_RESET1")
+    UseCode("KittGaming")
 
 
 
@@ -2622,7 +2637,7 @@ local posZ = 0
 --Mastery
     Tabs.Main:AddParagraph({
         Title = "Mastery Farm",
-        Content = "Auto farm your mastery"
+        Content = "Auto farm your mastery bf or gun"
     })
 
     local DropdownMastery = Tabs.Main:AddDropdown("DropdownMastery", {
@@ -2692,8 +2707,10 @@ local posZ = 0
           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * Pos
           game:GetService("Players").LocalPlayer.Character[CurrentEquipGun].Cooldown.Value = 0
           UseSkillGun = true
+	  AutoClickGun = true
           else
             UseSkillGun = false
+	    AutoClickGun = false 
             AutoHaki()
           EquipTool(SelectWeapon)
              Click()
@@ -2711,12 +2728,14 @@ local posZ = 0
          
           end
           until not AutoFarmMasGun or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or not TypeMastery == 'Queat'
-          UseSkillGun = false
+          UseSkillGun = false 
+	  AutoClickGun = false 
           end
           end
          
           end
           UseSkillGun = false
+	  AutoClickGun = false 
           Tween(CFrameQ)
           end
           end)
@@ -2741,8 +2760,10 @@ local posZ = 0
           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * Pos
           game:GetService("Players").LocalPlayer.Character[CurrentEquipGun].Cooldown.Value = 0
           UseSkillGun = true
+	  AutoClickGun = true
           else
             UseSkillGun = false
+	    AutoClickGun = false 
             AutoHaki()
           EquipTool(SelectWeapon)
           Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -2762,6 +2783,7 @@ local posZ = 0
           end
           else
             UseSkillGun = false
+	    AutoClickGun = false 
           Tween(CFrameMon)
           end
           end)
@@ -2776,8 +2798,10 @@ local posZ = 0
           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * Pos
           game:GetService("Players").LocalPlayer.Character[CurrentEquipGun].Cooldown.Value = 0
           UseSkillGun = true
+          AutoClickGun = true
           else
             UseSkillGun = false
+	    AutoClickGun = false 
             AutoHaki()
                
           EquipTool(SelectWeapon)
@@ -2797,6 +2821,7 @@ local posZ = 0
           end
           until not AutoFarmMasGun or not MasteryType == 'Near Mobs' or not v.Parent or v.Humanoid.Health <= 0 or not TypeMastery == 'Near Mobs'
           UseSkillGun = false
+	  AutoClickGun = false
           end
          
           end
@@ -2833,6 +2858,7 @@ local posZ = 0
           UseSkillGun = true
           else
             UseSkillGun = false
+	    AutoClickGun = false  
             AutoHaki()
           EquipTool(SelectWeapon)
           Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -2852,6 +2878,7 @@ local posZ = 0
           end
           else
             UseSkillGun = false
+	    AutoClickGun = false
           Tween(game:GetService("ReplicatedStorage"):FindFirstChild(SelectBoss).HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
           end
           end)
