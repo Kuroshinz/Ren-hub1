@@ -2378,7 +2378,7 @@ coroutine.wrap(YTZCAJC_fake_script)()
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- Hehe
 local posX = 0
-local posY = 60
+local posY = 50
 local posZ = 0
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
@@ -2387,9 +2387,9 @@ local posZ = 0
         Content = "Auto Farm"
     })
 
-    local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
-        Title = "Dropdown",
-        Values = {'Melee','Sword','Blox Fruit'},
+    local SelectWeapon = Tabs.Main:AddSelectWeapon("SelectWeapon", {
+        Title = "SelectWeapon",
+        Values = {'Melee','Sword','Blox Fruit','Gun'},
         Multi = false,
         Default = 1,
     })
